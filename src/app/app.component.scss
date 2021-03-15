@@ -1,0 +1,28 @@
+mat-card {
+  margin: 0.5rem;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#add-button {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+}
+
+.avatar {
+  background-image: url(https://via.placeholder.com/150);
+}

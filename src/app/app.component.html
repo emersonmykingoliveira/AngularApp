@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <span>Assignments for job applicants (NTC)</span>
+</mat-toolbar>
+<div class="container">
+  <mat-card *ngFor="let post of posts" class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="avatar"></div>
+      <mat-card-title>{{post.title}}</mat-card-title>
+      <mat-card-subtitle *ngIf="users[post.userId]">{{users[post.userId]?.name}}</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="post.userId == 999">Your Post</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{post.body}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="editPostDialog(post.id)" color="primary">EDIT</button>
+      <button mat-button (click)="deletePost(post.id)" color="warn">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<button mat-fab (click)="newPostDialog()" color="accent" id="add-button">
+  <mat-icon>Add</mat-icon>
+</button>
